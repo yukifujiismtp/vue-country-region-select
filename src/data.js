@@ -2248,11 +2248,11 @@ export default [
         "shortCode": "21"
       },
       {
-        "name": "Sofija",
+        "name": "Sofia",
         "shortCode": "23"
       },
       {
-        "name": "Sofija-Grad",
+        "name": "Sofia-Grad",
         "shortCode": "22"
       },
       {
