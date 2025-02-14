@@ -1,6 +1,6 @@
 {
   "name": "yukifujii-vue-country-region-select",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "A Country select component and Region select component for Vue.js. Work together and standalone.",
   "author": "Yuki Fujii",
   "keywords": [
@@ -16,6 +16,10 @@
     "lint": "vue-cli-service lint",
     "e2e:open": "vue-cli-service e2e:open"
   },
+  "files": [
+    "dist/vueCountryRegionSelect.umd.min.js"
+  ],
+  "main": "./dist/vueCountryRegionSelect.umd.min.js",
   "dependencies": {
     "vue": "^2.5.17"
   },
