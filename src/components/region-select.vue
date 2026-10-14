@@ -67,14 +67,15 @@ export default {
     },
     getRegionWithCountry(country) {
       country = country || this.country
-      let countryRegions = regions.find((elem) => {
+      let countryObj = regions.find((elem) => {
         if (this.countryName) {
           return elem.countryName === country
         } else {
           return elem.countryShortCode === country
         }
-      }).regions
-      if (this.$i18n && this.usei18n) {
+      })
+      let countryRegions = countryObj ? countryObj.regions : []
+      if (this.$i18n && this.usei18n && countryRegions.length) {
         countryRegions = countryRegions.map((region) => {
           let localeRegion = Object.assign({}, region)
           localeRegion.name = this.$t(region.name)
@@ -84,21 +85,21 @@ export default {
           return region1.name > region2.name ? 1 : -1
         })
       }
-      if (this.whiteList) {
+      if (this.whiteList && countryRegions.length) {
         countryRegions = countryRegions.filter((region) => {
           return this.whiteList.includes(region.shortCode)
         })
       }
-      if (this.blackList) {
+      if (this.blackList && countryRegions.length) {
         countryRegions = countryRegions.filter((region) => {
           return !this.blackList.includes(region.shortCode)
         })
       }
       this.shownRegions = countryRegions
-      if (this.disablePlaceholder && this.ran) {
+      if (this.disablePlaceholder && this.ran && this.shownRegions.length) {
         this.onChange(this.shownRegions[0][this.valueType])
       }
-      if (this.removePlaceholder) {
+      if (this.removePlaceholder && this.shownRegions.length) {
         this.onChange(this.shownRegions[0][this.valueType])
       }
       this.ran = true

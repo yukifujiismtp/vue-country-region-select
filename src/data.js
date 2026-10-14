@@ -2752,6 +2752,20 @@ export default [
     ]
   },
   {
+    "countryName": "Canary Islands",
+    "countryShortCode": "IC",
+    "regions": [
+      {
+        "name": "Las Palmas",
+        "shortCode": "GC"
+      },
+      {
+        "name": "Santa Cruz de Tenerife",
+        "shortCode": "TF"
+      }
+    ]
+  },
+  {
     "countryName": "Cape Verde",
     "countryShortCode": "CV",
     "regions": [

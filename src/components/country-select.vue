@@ -112,6 +112,7 @@
             return region.countryShortCode === this.firstCountry
           }
         })
+        if (!regionObj) return this.firstCountry
         if (this.$i18n && this.usei18n) {
           return this.$t(regionObj.countryName)
         }
